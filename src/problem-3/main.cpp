@@ -42,13 +42,11 @@ long part1(const input& input) {
  * Space complexity: O(1)
 */
 long part2(const input& input) {
-	return (
-		count_trees(input, 1, 1) *
-		count_trees(input, 3, 1) *
-		count_trees(input, 5, 1) *
-		count_trees(input, 7, 1) *
-		count_trees(input, 1, 2)
-	);
+	return count_trees(input, 1, 1)
+		* count_trees(input, 3, 1)
+		* count_trees(input, 5, 1)
+		* count_trees(input, 7, 1)
+		* count_trees(input, 1, 2);
 }
 
 /**
