@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 #include <string>
 #include <unordered_set>
 #include <vector>
@@ -47,7 +48,7 @@ long part1(const input& input) {
  * Runtime complexity: O(n^2)
  * Space complexity: O(n)
 */
-long part2(const std::vector<long>& input) {
+long part2(const input& input) {
 	std::unordered_set<long> seen(input.begin(), input.end());
 
 	for (std::size_t i = 0; i < input.size(); i++) {
