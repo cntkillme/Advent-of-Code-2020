@@ -48,8 +48,7 @@ long part1(const input& input) {
  * Space complexity: O(n)
 */
 long part2(const std::vector<long>& input) {
-	std::unordered_set<long> seen;
-	seen.insert(input.begin(), input.end());
+	std::unordered_set<long> seen(input.begin(), input.end());
 
 	for (std::size_t i = 0; i < input.size(); i++) {
 		for (std::size_t j = i + 1; j < input.size(); j++) {

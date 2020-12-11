@@ -1,6 +1,7 @@
 .PHONY: all clean
 
-all: main.cpp
+all:
 	$(CXX) main.cpp -o $(BIN)/problem-2.out
 
 clean:
+	rm -f $(BIN)/problem-2.out
