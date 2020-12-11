@@ -87,8 +87,7 @@ static std::unordered_map<field, bool(*)(const input_entry& entry)> validators({
 			return hcl.size() == 7
 				&& hcl[0] == '#'
 				&& std::all_of(hcl.begin() + 1, hcl.end(), [](char ch) {
-					return (ch >= '0' && ch <= '9')
-						|| (ch >= 'a' && ch <= 'f');
+					return (ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'f');
 				});
 		}
 	},
@@ -143,9 +142,7 @@ long part2(const input& input) {
 		return acc + (
 			std::all_of(mapping.begin(), mapping.end(), [&entry](const auto& pair) {
 				// cid optional
-				return entry.count(pair.second) > 0
-					? validators[pair.second](entry)
-					: pair.second == field::cid;
+				return entry.count(pair.second) > 0 ? validators[pair.second](entry) : pair.second == field::cid;
 			}) ? 1 : 0
 		);
 	});
