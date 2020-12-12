@@ -47,7 +47,7 @@ std::size_t part1(const input& input) {
 }
 
 /** Returns an empty seat ID after the first seat ID.
- * Runtime complexity: O(n^2)
+ * Runtime complexity: O(n log n)
  * Space complexity: O(n)
 */
 std::size_t part2(const input& input) {

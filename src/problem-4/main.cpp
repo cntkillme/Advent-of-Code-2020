@@ -21,8 +21,8 @@ static std::unordered_map<std::string, field> mapping({
 	{ "cid", field::cid }
 });
 
-static long part1(const input& input);
-static long part2(const input& input);
+static std::size_t part1(const input& input);
+static std::size_t part2(const input& input);
 static bool validate_int(const std::string& value, long min, long max);
 
 int main() {
@@ -56,9 +56,24 @@ int main() {
 }
 
 static std::unordered_map<field, bool(*)(const input_entry& entry)> validators({
-	{ field::byr, [](const input_entry& entry) { return validate_int(entry.at(field::byr), 1920, 2002); } },
-	{ field::iyr, [](const input_entry& entry) { return validate_int(entry.at(field::iyr), 2010, 2020); } },
-	{ field::eyr, [](const input_entry& entry) { return validate_int(entry.at(field::eyr), 2020, 2030); } },
+	{
+		field::byr,
+		[](const input_entry& entry) {
+			return validate_int(entry.at(field::byr), 1920, 2002);
+		}
+	},
+	{
+		field::iyr,
+		[](const input_entry& entry) {
+			return validate_int(entry.at(field::iyr), 2010, 2020);
+		}
+	},
+	{
+		field::eyr,
+		[](const input_entry& entry) {
+			return validate_int(entry.at(field::eyr), 2020, 2030);
+		}
+	},
 	{
 		field::hgt,
 		[](const input_entry& entry) {
@@ -122,30 +137,39 @@ static std::unordered_map<field, bool(*)(const input_entry& entry)> validators({
  * Runtime complexity: O(n)
  * Space complexity: O(1)
 */
-long part1(const input& input) {
-	return std::accumulate(input.begin(), input.end(), 0L, [](long acc, const input_entry& entry) {
-		return acc + (
-			std::all_of(mapping.begin(), mapping.end(), [&entry](const auto& pair) {
-				// cid optional
-				return entry.count(pair.second) > 0 || pair.second == field::cid;
-			}) ? 1 : 0
-		);
-	});
+std::size_t part1(const input& input) {
+	return std::accumulate(
+		input.begin(),
+		input.end(),
+		static_cast<std::size_t>(0), [](std::size_t acc, const input_entry& entry) {
+			return acc + (
+				std::all_of(mapping.begin(), mapping.end(), [&entry](const auto& pair) {
+					// cid optional
+					return entry.count(pair.second) > 0 || pair.second == field::cid;
+				}) ? 1 : 0
+			);
+		}
+	);
 }
 
 /** Count passports with all required fields with valid values.
  * Runtime complexity: O(n)
  * Space complexity: O(1)
 */
-long part2(const input& input) {
-	return std::accumulate(input.begin(), input.end(), 0L, [](long acc, const input_entry& entry) {
-		return acc + (
-			std::all_of(mapping.begin(), mapping.end(), [&entry](const auto& pair) {
-				// cid optional
-				return entry.count(pair.second) > 0 ? validators[pair.second](entry) : pair.second == field::cid;
-			}) ? 1 : 0
-		);
-	});
+std::size_t part2(const input& input) {
+	return std::accumulate(
+		input.begin(),
+		input.end(),
+		static_cast<std::size_t>(0),
+		[](std::size_t acc, const input_entry& entry) {
+			return acc + (
+				std::all_of(mapping.begin(), mapping.end(), [&entry](const auto& pair) {
+					// cid optional
+					return entry.count(pair.second) > 0 ? validators[pair.second](entry) : pair.second == field::cid;
+				}) ? 1 : 0
+			);
+		}
+	);
 }
 
 bool validate_int(const std::string& value, long min, long max) {

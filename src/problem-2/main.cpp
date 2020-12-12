@@ -6,16 +6,16 @@
 #include "dataset.hpp"
 
 struct input_entry {
-	int min;
-	int max;
+	std::size_t min;
+	std::size_t max;
 	char letter;
 	std::string password;
 };
 
 using input = std::vector<input_entry>;
 
-static long part1(const input& input);
-static long part2(const input& input);
+static std::size_t part1(const input& input);
+static std::size_t part2(const input& input);
 
 int main() {
 	auto stream = open_dataset("data/problem-2.txt");
@@ -47,17 +47,17 @@ int main() {
  * Runtime complexity: O(mn)
  * Space complexity: O(1)
 */
-long part1(const input& input) {
+std::size_t part1(const input& input) {
 	auto isValid = [](const input_entry& entry) {
-		auto cnt = std::count(entry.password.begin(), entry.password.end(), entry.letter);
+		std::size_t cnt = std::count(entry.password.begin(), entry.password.end(), entry.letter);
 		return cnt >= entry.min && cnt <= entry.max;
 	};
 
 	return std::accumulate(
 		input.begin(),
 		input.end(),
-		0L,
-		[&isValid](long total, const input_entry& entry) {
+		static_cast<std::size_t>(0),
+		[&isValid](std::size_t total, const input_entry& entry) {
 			return total + (isValid(entry) ? 1 : 0);
 		}
 	);
@@ -67,7 +67,7 @@ long part1(const input& input) {
  * Runtime complexity: O(n)
  * Space complexity: O(1)
 */
-long part2(const input& input) {
+std::size_t part2(const input& input) {
 	auto isValid = [](const input_entry& entry) {
 		bool a = entry.password[entry.min - 1] == entry.letter;
 		bool b = entry.password[entry.max - 1] == entry.letter;
@@ -77,8 +77,8 @@ long part2(const input& input) {
 	return std::accumulate(
 		input.begin(),
 		input.end(),
-		0L,
-		[&isValid](long total, const input_entry& entry) {
+		static_cast<std::size_t>(0),
+		[&isValid](std::size_t total, const input_entry& entry) {
 			return total + (isValid(entry) ? 1 : 0);
 		}
 	);
