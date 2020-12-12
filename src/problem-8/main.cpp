@@ -51,7 +51,7 @@ int main() {
 	return 0;
 }
 
-/** Product of the two entries that sum to 2020.
+/** Return the accumulator right before any instruction is about to run twice.
  * Runtime complexity: O(n)
  * Space complexity: O(n)
 */
@@ -59,8 +59,8 @@ long part1(const input& input) {
 	return execute(input, 1).acc;
 }
 
-/** Product of the three entries that sum to 2020.
- * Runtime complexity: O(mn)
+/** Return the accumulator after replacing a single jmp/nop with a nop/jmp such that pc is at one after the end.
+ * Runtime complexity: O(mn) [m = pc history limit]
  * Space complexity: O(mn)
 */
 long part2(const input& input) {
