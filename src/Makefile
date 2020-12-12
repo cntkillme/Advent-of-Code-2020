@@ -9,6 +9,7 @@ all:
 	$(MAKE) -C problem-6
 	$(MAKE) -C problem-7
 	$(MAKE) -C problem-8
+	$(MAKE) -C problem-9
 
 clean:
 	$(MAKE) -C problem-1 clean
