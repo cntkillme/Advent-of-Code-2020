@@ -27,13 +27,17 @@ int main() {
 }
 
 /** Returns true if there are two integers that sum to value.
- * Runtime complexity: O(n^2)
- * Space complexity: O(1)
+ * Runtime complexity: O(n)
+ * Space complexity: O(n)
  */
 template<typename Iterator>
 bool has_pair(Iterator begin, Iterator end, long value) {
+	std::unordered_set<long> seen;
+
 	for (auto iter = begin; iter != end; ++iter) {
-		if (std::find(std::next(iter), end, value - *iter) != end) {
+		seen.insert(*iter);
+
+		if (seen.count(value - *iter) > 0) {
 			return true;
 		}
 	}
@@ -42,11 +46,12 @@ bool has_pair(Iterator begin, Iterator end, long value) {
 }
 
 /** Returns the first number such that it is not a sum of the previous 25 numbers.
- * Runtime complexity: O(n^3)
+ * Runtime complexity: O(n)
  * Space complexity: O(1)
  */
 long part1(const input& input) {
 	for (auto iter = input.begin() + 25; iter != input.end(); ++iter) {
+		// has_pair is O(1) here because the input size is a constant
 		if (!has_pair(iter - 25, iter, *iter)) {
 			return *iter;
 		}
