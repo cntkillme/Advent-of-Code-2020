@@ -60,8 +60,7 @@ long part1(const input& input) {
 	throw std::runtime_error("Part 1: No Solution!");
 }
 
-/** Returns the sum of the smallest and largest number in a continuous range of at least size 2 that sum to the first
- *  number such that is it not a sum of the previous 25 numbers.
+/** Returns the sum of the smallest and largest number in a continuous range of at least 2 values that sum to invalid.
  * Runtime complexity: O(n^2)
  * Space complexity: O(n)
 */
