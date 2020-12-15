@@ -46,7 +46,7 @@ long part1(const input& input) {
 }
 
 /** Count the number of distinct ways the adapters can be arranged.
- * Runtime complexity: O(n)
+ * Runtime complexity: O(n log n)
  * Space complexity: O(n)
 */
 long part2(const input& input) {
