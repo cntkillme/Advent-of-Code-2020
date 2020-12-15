@@ -29,7 +29,7 @@ int main() {
  * Space complexity: O(n)
 */
 long part1(const input& input) {
-	std::unordered_set seen(input.begin(), input.end());
+	std::unordered_set<long> seen(input.begin(), input.end());
 	long oneJoltDifferences = 0;
 	long threeJoltDifferences = 1;
 	seen.insert(0);
