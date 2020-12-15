@@ -10,6 +10,7 @@ all:
 	$(MAKE) -C problem-7
 	$(MAKE) -C problem-8
 	$(MAKE) -C problem-9
+	$(MAKE) -C problem-10
 
 clean:
 	$(MAKE) -C problem-1 clean
@@ -20,3 +21,5 @@ clean:
 	$(MAKE) -C problem-6 clean
 	$(MAKE) -C problem-7 clean
 	$(MAKE) -C problem-8 clean
+	$(MAKE) -C problem-9 clean
+	$(MAKE) -C problem-10 clean
