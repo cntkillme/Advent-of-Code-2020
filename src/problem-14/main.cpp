@@ -64,8 +64,8 @@ int main() {
 }
 
 /** Sum of all values after completion of ruleset 1.
- * Time complexity:
- * Space complexity:
+ * Time complexity: O(n)
+ * Space complexity: O(n)
 */
 long part1(const state& state) {
 	std::unordered_map<long, long> memory;
