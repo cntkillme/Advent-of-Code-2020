@@ -25,7 +25,7 @@ int main() {
 }
 
 /** Tree count of horizontally wrapping map with movement 3 right, 1 down.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(1)
 */
 std::size_t part1(const input& input) {
@@ -38,7 +38,7 @@ std::size_t part1(const input& input) {
  * - 5 right, 1 down;
  * - 7 right, 1 down;
  * - and 1 right, 2 down.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(1)
 */
 std::size_t part2(const input& input) {
@@ -51,7 +51,7 @@ std::size_t part2(const input& input) {
 
 /**
  * Tree count of horizontally wrapping map with movement vx right, vy down.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Spacea complexity: O(1)
  */
 std::size_t count_trees(const input& input, long vx, long vy) {

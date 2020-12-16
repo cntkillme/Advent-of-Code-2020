@@ -1,6 +1,5 @@
 #include <algorithm>
 #include <iostream>
-#include <unordered_map>
 #include <unordered_set>
 #include <vector>
 #include "dataset.hpp"
@@ -25,7 +24,7 @@ int main() {
 }
 
 /** Product of number of 1-jolt differences and number of 3-jolt differences.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(n)
 */
 long part1(const input& input) {
@@ -46,19 +45,23 @@ long part1(const input& input) {
 }
 
 /** Count the number of distinct ways the adapters can be arranged.
- * Runtime complexity: O(n log n)
+ * Time complexity: O(n)
  * Space complexity: O(n)
 */
 long part2(const input& input) {
-	auto sorted = input;
-	std::unordered_map<long, long> parentCount;
-	std::sort(sorted.begin(), sorted.end());
-	sorted.push_back(sorted.back() + 3);
-	parentCount[0] = 1;
+	long max = *std::max_element(input.begin(), input.end()) + 3;
+	std::vector<long> parentCount(max + 1, 0);
+	std::for_each(input.begin(), input.end(), [&](long value) { parentCount[value] = value; });
+	parentCount.at(0) = 1;
+	parentCount.at(max) = max;
 
-	for (long value : sorted) {
-		parentCount[value] = parentCount[value - 1] + parentCount[value - 2] + parentCount[value - 3];
+	auto getParentCount = [&](long value) { return value >= 0 ? parentCount[value] : 0; };
+
+	for (long value : parentCount) {
+		if (value != 0) {
+			parentCount[value] = getParentCount(value - 1) + getParentCount(value - 2) + getParentCount(value - 3);
+		}
 	}
 
-	return parentCount[sorted.back()];
+	return parentCount.at(max);
 }

@@ -31,7 +31,7 @@ int main() {
 }
 
 /** Calculate the manhattan distance between ship's final location.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(1)
 */
 long part1(const input& input) {
@@ -71,7 +71,7 @@ long part1(const input& input) {
 }
 
 /** Calculate the manhattan distance between ship's final location.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(1)
 */
 long part2(const input& input) {

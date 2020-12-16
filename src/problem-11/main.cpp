@@ -34,7 +34,7 @@ int main() {
 }
 
 /** Continuously simulates the state until there are no changes and yields the number of occupied seats.
- * Runtime complexity: O(mn) [where m = # of simulations]
+ * Time complexity: O(mn) [where m = # of simulations]
  * Space complexity: O(mn)
 */
 long part1(const state& state) {
@@ -61,7 +61,7 @@ long part1(const state& state) {
 }
 
 /** Continuously simulates the state until there are no changes and yields the number of occupied seats.
- * Runtime complexity: O(mn^1.5) [where m = # of simulations]
+ * Time complexity: O(mn^1.5) [where m = # of simulations]
  * Space complexity: O(mn^1.5)
 */
 long part2(const state& state) {
@@ -88,7 +88,7 @@ long part2(const state& state) {
 }
 
 /** Simulates the part 1 ruleset once and returns the state.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(n)
  */
 std::pair<bool, state> simulate_part1(const state& state) {
@@ -139,7 +139,7 @@ std::pair<bool, state> simulate_part1(const state& state) {
 }
 
 /** Simulates the part 2 ruleset once and returns the state.
- * Runtime complexity: O(n^1.5)
+ * Time complexity: O(n^1.5)
  * Space complexity: O(n)
  */
 std::pair<bool, state> simulate_part2(const state& state) {

@@ -44,7 +44,7 @@ int main() {
 }
 
 /** Count valid passwords where letter occurs between min to max times.
- * Runtime complexity: O(mn)
+ * Time complexity: O(mn)
  * Space complexity: O(1)
 */
 std::size_t part1(const input& input) {
@@ -64,7 +64,7 @@ std::size_t part1(const input& input) {
 }
 
 /** Count valid passwords where letter occurs exactly once at position min and position max.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(1)
 */
 std::size_t part2(const input& input) {

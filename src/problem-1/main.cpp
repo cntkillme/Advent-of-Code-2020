@@ -25,7 +25,7 @@ int main() {
 }
 
 /** Product of the two entries that sum to 2020.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(n)
 */
 long part1(const input& input) {
@@ -45,7 +45,7 @@ long part1(const input& input) {
 }
 
 /** Product of the three entries that sum to 2020.
- * Runtime complexity: O(n^2)
+ * Time complexity: O(n^2)
  * Space complexity: O(n)
 */
 long part2(const input& input) {

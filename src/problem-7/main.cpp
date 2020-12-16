@@ -114,7 +114,7 @@ int main() {
 }
 
 /** Counts the number of bags that eventually contain one shiny gold bag.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(n)
 */
 std::size_t part1(const input& input, const mapping& mapping) {
@@ -139,7 +139,7 @@ std::size_t part1(const input& input, const mapping& mapping) {
 }
 
 /** Counts the total number of bags that one shiny gold bag will contain.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(n)
 */
 std::size_t part2(const input& input, const mapping& mapping) {

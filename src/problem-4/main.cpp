@@ -134,7 +134,7 @@ static std::unordered_map<field, bool(*)(const input_entry& entry)> validators({
 });
 
 /** Count passports with all required fields.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(1)
 */
 std::size_t part1(const input& input) {
@@ -153,7 +153,7 @@ std::size_t part1(const input& input) {
 }
 
 /** Count passports with all required fields with valid values.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(1)
 */
 std::size_t part2(const input& input) {

@@ -39,7 +39,7 @@ int main() {
 }
 
 /** Sum of unique answers of each group.
- * Runtime complexity: O(mn)
+ * Time complexity: O(mn)
  * Space complexity: O(m)
 */
 std::size_t part1(const input& input) {
@@ -59,7 +59,7 @@ std::size_t part1(const input& input) {
 }
 
 /** Sum of unique answers of each group shared by all members of that group.
- * Runtime complexity: O()
+ * Time complexity: O()
  * Space complexity: O()
 */
 std::size_t part2(const input& input) {

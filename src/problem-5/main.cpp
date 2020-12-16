@@ -37,7 +37,7 @@ int main() {
 }
 
 /** Returns the highest seat ID.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(1)
 */
 std::size_t part1(const input& input) {
@@ -47,7 +47,7 @@ std::size_t part1(const input& input) {
 }
 
 /** Returns an empty seat ID after the first seat ID.
- * Runtime complexity: O(n log n)
+ * Time complexity: O(n log n)
  * Space complexity: O(n)
 */
 std::size_t part2(const input& input) {
@@ -67,7 +67,7 @@ std::size_t part2(const input& input) {
 }
 
 /** Returns the underlying value of a string (binary space partitioning).
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(1)
  */
 std::size_t bsp(const std::string& data, char lowerChar) {

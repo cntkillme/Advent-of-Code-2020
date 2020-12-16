@@ -27,7 +27,7 @@ int main() {
 }
 
 /** Returns true if there are two integers that sum to value.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(n)
  */
 template<typename Iterator>
@@ -46,7 +46,7 @@ bool has_pair(Iterator begin, Iterator end, long value) {
 }
 
 /** Returns the first number such that it is not a sum of the previous 25 numbers.
- * Runtime complexity: O(n)
+ * Time complexity: O(n)
  * Space complexity: O(1)
  */
 long part1(const input& input) {
@@ -61,7 +61,7 @@ long part1(const input& input) {
 }
 
 /** Returns the sum of the smallest and largest number in a continuous range of at least 2 values that sum to invalid.
- * Runtime complexity: O(n^2)
+ * Time complexity: O(n^2)
  * Space complexity: O(n)
 */
 long part2(const input& input, long invalid) {
